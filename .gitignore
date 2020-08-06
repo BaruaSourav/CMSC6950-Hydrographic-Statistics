@@ -128,3 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 oceanspy_get_started
+*.aux
+*.fdb_latexmk
+*.fls
