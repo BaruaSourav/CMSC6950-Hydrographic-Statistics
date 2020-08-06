@@ -14,3 +14,6 @@ TempwithDepth.png: GenerateTempwithDepth.py
 
 report.pdf: report.tex $(FIGURES) 
     latexmk -pdf
+
+clean:
+    latexmk -c

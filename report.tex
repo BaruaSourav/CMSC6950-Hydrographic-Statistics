@@ -25,26 +25,37 @@ Q?download=1
 
 
 
-\subsection{Marine Heat Waves}
+\section{OceanSpy for Ocean data visualization}
 
-To quantify whether SST for a particular area is indeed abnormally warm, we will use the Marine Heatwave (MHW) definition of Hobday et al. (manuscript submitted to Progress in Oceanography).  An algorithm for detecting a MHW has been implemented in the Python package `marineHeatWave`.
+OceanSpy provides different plotting functionalities that makes the process of plotting of different oceanographic data easy and efficient. OceanSpy builds on software packages developed by the Pangeo community, in particular xarray, dask, and xgcm. 
 
-\begin{figure}
-\includegraphics[width=0.9\textwidth]{TempvsSalinity}
-\caption{SST over time from at Station 44225 with QC codes shown}
-\label{fig:TempvsSalinity}
-\end{figure}
+\subsection{TS\_diagram() method}
+The TS\_diagram method inside the oceanspy.plot module plots temperature-salinity plots of the OceanDataset object. I created a GenerateTvsSalinityPlot.py file that downloads the example data file provided by OceanSpy and then uses the method TS\_diagram() to draw a Temperature vs salinity graph.  
 
+\subsection{horizontal\_section() method}
+The horizontal\_section method inside the oceanspy.plot module plots horizontal section plot. I created a GenerateTempwithDepth.py file that downloads the example data file provided by OceanSpy and then uses the method horizontal\_section() to draw a plot where temperature is plotted where the horizontal axis is longitude and vertical axis is latitude, the contour channel is controlled using the depth column of the dataset. 
 
 
 \section{Results}
+\begin{figure}
+\includegraphics[width=1\textwidth]{TempvsSalinity}
+\caption{Temperature vs Salinity plot using TS\_diagram() method}
+\label{fig:TempvsSalinity}
+\end{figure}
 
-As shown in Figure~\ref{fig:TempvsSalinity}, the SST has a typical annual cycle between about $0^\circ$ C and $20^\circ$ C. There is some missing data between the years 2002 and 2004.  In 2005, 2006, and 2008 there is
-increased noise in the data suggesting that something is wrong with the data.  It would be strange for the SST to be considerably below zero.  More significantly, the data from early 2010 is very suspicious as it suggests that the temperature is getting close to $80^\circ$ C.  Clearly we need to clean this dataset before continuing to analyze it.
+\begin{figure}
+\includegraphics[width=1\textwidth]{TempwithDepth}
+\caption{Temperature with Depth plotted as Contour channel using horizontal\_section() method}
+\label{fig:TempwithDepth}
+\end{figure}
+
+Both of the plot were generated successfully. It can be seen that on figure \ref{fig:TempvsSalinity}, along with the plot some data like XC and YC is also being displayed. I don't actually get the significance of it. Also from the plot, it can be observed that salinity increases in a slow manner with the increment of temperature. 
+
+On figure \ref{fig:TempwithDepth} the horizontal\_section() function creates a plot of temperature and shows a colorbar with the plot that shows the color for different temperature. In this plot we can also see the depth through the contour of the plot.Horizontal axis of this plot indicates the longitude and vertical axis indicates the latitude. 
 
 
 
-This dataset from the Marine Environmental Data Section (MEDS) of the Department of Fisheries and Oceans (DFO) has already gone a quality control (QC) process. The results of QC are given by a numerical code as describe in Table~\ref{tbl:qc_codes}.
+
 
 
 
@@ -54,8 +65,6 @@ This dataset from the Marine Environmental Data Section (MEDS) of the Department
 
 
 \section{Conclusions}
-
-
-% would be good to a a bibilography here too.
+I have explored two plotting feature that is provided by OceanSpy python module and found out that this package generates useful plots for ocean scientists and professionals. I could not interpret much of the use cases of the module due to lack of domain knowledge regarding ocean data. I intend to explore the module in a later time with a better understanding of ocean data and related knowledge about oceanographic visualizations and ocean current simulation models.
 
 \end{document}

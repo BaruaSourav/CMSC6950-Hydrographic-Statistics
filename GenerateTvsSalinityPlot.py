@@ -21,7 +21,7 @@ if not os.path.isdir("oceanspy_get_started"):
             "EXjiMbANEHBZhy62oUDjzT4BtoJSW2W0tYtS2qO8_SM5mQ?"
             "download=1",
             "tar xvzf oceanspy_get_started.tar.gz",
-            "rm -f oceanspy_get_started.tar.gz",
+            "rm -f oceanspy_get_started.tar.gz", 
         ]
         subprocess.call("&&".join(commands), shell=True)
 od_snapshot = ospy.open_oceandataset.from_zarr("oceanspy_get_started")
