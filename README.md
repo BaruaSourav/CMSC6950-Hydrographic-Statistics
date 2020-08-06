@@ -13,7 +13,7 @@ $ conda config --prepend channels conda-forge
 $ wget https://raw.githubusercontent.com/hainegroup/oceanspy/master/sciserver_catalogs/environment.yml
 $ conda env create -f environment.yml
 ```
-Running this will make an exact environment with all resolved dependencies. 
+Running this will make an exact environment with all resolved dependencies. The `environment.yml` file is included with the repository.
 
 After that I have run the `conda activate Oceaonography` to activate the Oceanography environment inside conda. 
 
